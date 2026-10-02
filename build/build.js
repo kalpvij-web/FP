@@ -131,7 +131,7 @@ prelim.push(
 prelim.push(
   H1("CERTIFICATE"),
   C("Sangamner Nagarpalika Arts, D.J. Malpani Commerce and B.N. Sarda Science College (Autonomous), Sangamner", { after: 240 }),
-  P("This is to certify that **Ms. Gatha Kalpana Vijay**, a student of S.Y.B.A. (English Literature), has satisfactorily completed the Field Project entitled **“The Unserious Generation on the Most Serious Topic: Irony, Humour and Gen Z Language as Political Resistance in the NEET-UG 2026 Protests”** under my guidance and supervision during the academic year 2026–27."),
+  P("This is to certify that **Gatha Kalpana Vijay**, a student of S.Y.B.A. (English Literature), has satisfactorily completed the Field Project entitled **“The Unserious Generation on the Most Serious Topic: Irony, Humour and Gen Z Language as Political Resistance in the NEET-UG 2026 Protests”** under my guidance and supervision during the academic year 2026–27."),
   P("To the best of my knowledge, this work is the original work of the student and has not been submitted earlier to this or any other university or institution for the award of any degree, diploma or certificate."),
   blank(), blank(),
   L("Place: Sangamner", { after: 0 }),
