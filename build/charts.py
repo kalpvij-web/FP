@@ -15,6 +15,6 @@ def bar(labels, vals, title, xlabel, fn, horiz=False):
     for s in ["top","right"]: ax.spines[s].set_visible(False)
     ax.set_title(title, fontsize=11)
     fig.tight_layout(); fig.savefig(fn); plt.close(fig)
-bar(["Pinterest","Instagram","BBC News"],[9,3,1],"Items collected, by platform (13 items)","Number of items","g1.png")
+bar(["Pinterest","Instagram"],[5,2],"Posters in the corpus, by platform","Number of posters","g1.png")
 bar(["Intertextuality","Irony","Parody","Wordplay / pun","Comparative satire","Slang reclamation","Dark humor"],[3,3,3,2,1,1,1],"Rhetorical devices in the 7 analysed items","Number of items using the device","g2.png",horiz=True)
 bar(["Absence of\naccountability","Systemic\ncollapse","Delay and\nsilence","Exam security\n(paper leak)","Stereotype of\napolitical youth"],[3,1,1,1,1],"What the 7 analysed items were targeting","Number of items","g3.png")
