@@ -73,6 +73,13 @@ const imgPlaceholder = (label) => new Paragraph({
   border: { top: { style: BorderStyle.DASHED, size: 6, color: "808080", space: 8 }, bottom: { style: BorderStyle.DASHED, size: 6, color: "808080", space: 8 } },
   children: [new TextRun({ text: `[Insert photograph: ${label}]`, color: "808080" })],
 });
+const photo = (fn) => {
+  const { execSync } = require("child_process");
+  const [w, h] = execSync(`python3 -c "from PIL import Image;print(*Image.open('${fn}').size)"`).toString().trim().split(" ").map(Number);
+  const H = 220;
+  return new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 120, after: 60 }, keepNext: true,
+    children: [new ImageRun({ type: "jpg", data: fs.readFileSync(fn), transformation: { width: Math.round(H * w / h), height: H } })] });
+};
 const chart = (fn) => new Paragraph({
   alignment: AlignmentType.CENTER, spacing: { before: 120, after: 60 }, keepNext: true,
   children: [new ImageRun({ type: "png", data: fs.readFileSync(fn), transformation: { width: 520, height: 276 } })],
@@ -417,7 +424,8 @@ const items = [
   ]],
 ];
 items.forEach(([cap, src, paras]) => {
-  body.push(imgPlaceholder(cap.split(".")[0]), figCap(cap), source(src));
+  const n = cap.split(".")[0].split(" ")[1], f = `img/fig${n}.jpg`;
+  body.push(fs.existsSync(f) ? photo(f) : imgPlaceholder(cap.split(".")[0]), figCap(cap), source(src));
   paras.forEach((t, i) => body.push(P(t, { after: i === paras.length - 1 ? 240 : 120 })));
 });
 
